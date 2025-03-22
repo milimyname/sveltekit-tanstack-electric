@@ -3,14 +3,11 @@
 	import { SvelteQueryDevtools } from '@tanstack/svelte-query-devtools';
 	import { QueryClientProvider } from '@tanstack/svelte-query';
 	import { Toaster } from '$lib/components/ui/sonner';
-	import { RenderScan } from 'svelte-render-scan';
 
 	let { data, children } = $props();
 </script>
 
 <Toaster />
-
-<RenderScan />
 
 <QueryClientProvider client={data.queryClient}>
 	{@render children?.()}

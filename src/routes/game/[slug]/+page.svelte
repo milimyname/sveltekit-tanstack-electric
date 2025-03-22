@@ -269,7 +269,8 @@
 	$effect(() => {
 		if (
 			latestSession?.status !== 'revealed' &&
-			combinedPlayerGamesStore?.every((pg) => pg.activeVote)
+			combinedPlayerGamesStore?.every((pg) => pg.activeVote) &&
+			currentGame?.game?.auto_reveal
 		) {
 			console.log('All players have voted. Reveal the session.');
 			reveal();
