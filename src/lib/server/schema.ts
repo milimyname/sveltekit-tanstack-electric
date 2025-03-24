@@ -6,11 +6,6 @@ import { sql } from 'drizzle-orm';
 export const gameStatusEnum = pgEnum('game_status', ['created', 'voting', 'revealed', 'finished']);
 export const sessionStatusEnum = pgEnum('session_status', ['active', 'revealed', 'completed']);
 
-// Tables
-export const items = pgTable('items', {
-	id: uuid('id').defaultRandom().primaryKey()
-});
-
 export const games = pgTable('games', {
 	id: uuid('id').defaultRandom().primaryKey(),
 	name: varchar('name', { length: 255 }).notNull(),
